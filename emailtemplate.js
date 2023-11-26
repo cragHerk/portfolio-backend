@@ -1,12 +1,12 @@
 const generateEmail = (appointment) => {
-  const { yourName, yourEmail, yourMessage } = appointment;
+  const { name, email, message } = appointment;
 
   const subject = "Wiadomość z crahHerkDev";
   const html = `
     <h2>Wiadomość</h2>
-   <p>Imię:${yourName}</p>
-<p>Email:${yourEmail}</p>
-<p>Wiadomość:${yourMessage}</p>   
+   <p>Imię:${name}</p>
+<p>Email:${email}</p>
+<p>Wiadomość:${message}</p>   
 `;
 
   return { subject: subject, html: html };
