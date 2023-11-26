@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { sendEmail } = require("./emailsender.js");
 const { generateEmail } = require("./emailtemplate.js");
-app.use(express.json());
+
 router.post("/sendEmail", async (req, res) => {
   const { name, email, message } = req.body;
 

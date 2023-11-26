@@ -1,10 +1,12 @@
 const http = require("http");
+const express = require("express");
+const app = express();
+const router = require("./index.js");
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "text/plain");
-  res.end("Hello World\n");
-});
+app.use(express.json());
+app.use("/", router);
+
+const server = http.createServer(app);
 
 const port = process.env.PORT || 10000;
 server.listen(port, () => {
